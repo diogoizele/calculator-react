@@ -1,26 +1,37 @@
 :root {
-    --bg-button: #f0f0f0;
-    --border-button: solid 1px #888
+  --bg-button: #f0f0f0;
+  --border-button: solid 1px #888;
 }
 
 .button {
-    font-size: 1.4em;
-    background-color: var(--bg-button);
-    border: none;
-    border-right: var(--border-button);
-    border-bottom: var(--border-button);
-    outline: none;
+  font-size: 1.4em;
+  background-color: var(--bg-button);
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 20rem;
+  outline: none;
 }
 
 .button:active {
-    filter: brightness(0.85);
+  filter: brightness(2.5);
 }
 
-.button.double {
-    grid-column: span 2;
+button.button.double {
+  width: 6rem;
+  text-align: start;
+  padding: 0rem 1rem;
 }
 
 .button.operation {
-    background-color: #fa8231;
+  background-color: #FF9500;
+  color: white;
+}
+.button.light-gray {
+    background-color: #D4D4D2;
+    color: black;
+}
+.button.dark-gray {
+    background-color: #1C1C1C;
     color: white;
 }

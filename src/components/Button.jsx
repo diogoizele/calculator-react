@@ -4,8 +4,10 @@ import "./Button.css";
 const Button = (props) => {
   const applyClasses = () => {
     let classes = "button ";
-    classes += props.operation ? "operation" : "";
-    classes += props.double ? "double" : "";
+    classes += props.operation ? " operation " : "";
+    classes += props.lightGray ? " light-gray " : "";
+    classes += props.darkGray ? " dark-gray " : "";
+    classes += props.double ? " double " : "";
     return classes;
   };
 

@@ -56,7 +56,7 @@ const Calculator = (props) => {
         values[0] = values[0] * values[1];
         values[1] = 0;
       } else if (currentOperation === "/") {
-        values[0] = values[0] / values[1];
+        values[0] = (values[0] / values[1]).toFixed(4);
         values[1] = 0;
       }
 
@@ -100,25 +100,27 @@ const Calculator = (props) => {
   return (
     <div className="calculator">
       <Display value={state.displayValue} />
-      <Button label="AC" click={clearMemory} />
-      <Button label="+/-" click={oppositeSign} />
-      <Button label="%" click={percent} />
-      <Button operation label="÷" click={() => setOperation("/")} />
-      <Button label="7" click={addDigit} />
-      <Button label="8" click={addDigit} />
-      <Button label="9" click={addDigit} />
-      <Button operation label="×" click={() => setOperation("*")} />
-      <Button label="4" click={addDigit} />
-      <Button label="5" click={addDigit} />
-      <Button label="6" click={addDigit} />
-      <Button operation label="-" click={setOperation} />
-      <Button label="1" click={addDigit} />
-      <Button label="2" click={addDigit} />
-      <Button label="3" click={addDigit} />
-      <Button operation label="+" click={setOperation} />
-      <Button double label="0" click={addDigit} />
-      <Button label="," click={addDigit} />
-      <Button operation label="=" click={setOperation} />
+      <div className="buttons">
+        <Button lightGray label="AC" click={clearMemory} />
+        <Button lightGray label="+/-" click={oppositeSign} />
+        <Button lightGray label="%" click={percent} />
+        <Button operation label="÷" click={() => setOperation("/")} />
+        <Button darkGray label="7" click={addDigit} />
+        <Button darkGray label="8" click={addDigit} />
+        <Button darkGray label="9" click={addDigit} />
+        <Button operation label="×" click={() => setOperation("*")} />
+        <Button darkGray label="4" click={addDigit} />
+        <Button darkGray label="5" click={addDigit} />
+        <Button darkGray label="6" click={addDigit} />
+        <Button operation label="-" click={setOperation} />
+        <Button darkGray label="1" click={addDigit} />
+        <Button darkGray label="2" click={addDigit} />
+        <Button darkGray label="3" click={addDigit} />
+        <Button operation label="+" click={setOperation} />
+        <Button double darkGray label="0" click={addDigit} />
+        <Button darkGray label="," click={addDigit} />
+        <Button operation label="=" click={setOperation} />
+      </div>
     </div>
   );
 };
