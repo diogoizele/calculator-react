@@ -1,8 +1,8 @@
 import React from "react";
-import './Display.css'
+import "./Display.css";
 
 const Display = (props) => {
-  return <div className="display">{props.value}</div>;
+  return <input className="display" maxLength="9" value={props.value} disabled/>;
 };
 
 export default Display;

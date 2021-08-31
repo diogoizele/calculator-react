@@ -56,7 +56,7 @@ const Calculator = (props) => {
         values[0] = values[0] * values[1];
         values[1] = 0;
       } else if (currentOperation === "/") {
-        values[0] = (values[0] / values[1]).toFixed(4);
+        values[0] = values[0] / values[1];
         values[1] = 0;
       }
 
@@ -72,7 +72,7 @@ const Calculator = (props) => {
   };
 
   const addDigit = (digit) => {
-    if (digit === "," && state.displayValue.includes(",")) {
+    if (digit === "." && state.displayValue.includes(".")) {
       return;
     }
     // se o display inicial for 0 ele vai apagar o valor do display para substituir posteriormente
@@ -88,7 +88,7 @@ const Calculator = (props) => {
     // muda o valor do display no estado e seta o clearDisplay pra falso (não precisa limpar o display)
     setState({ ...state, displayValue, clearDisplay: false });
 
-    if (digit !== ",") {
+    if (digit !== ".") {
       const i = state.current;
       const newValue = parseFloat(displayValue);
       const values = [...state.values];
@@ -118,7 +118,7 @@ const Calculator = (props) => {
         <Button darkGray label="3" click={addDigit} />
         <Button operation label="+" click={setOperation} />
         <Button double darkGray label="0" click={addDigit} />
-        <Button darkGray label="," click={addDigit} />
+        <Button darkGray label="." click={addDigit} />
         <Button operation label="=" click={setOperation} />
       </div>
     </div>
